@@ -1,0 +1,33 @@
+server:
+  port: 80
+
+spring:
+  application:
+    name: testname
+  boot:
+    admin:
+      client:
+        url:
+          - http://localhost:8080
+        username: admin
+        password: admin
+
+
+management:
+  endpoint:
+    info:
+      enabled: true
+    health:
+      show-details: always
+  endpoints:
+    enabled-by-default: true
+    web:
+      base-path: /actuator
+      exposure:
+        include:
+          - "*"
+
+info:
+  appName: admin-order
+  mavenAppName: '@project.artifactId@'
+  mavenVersion: '@project.version@'
